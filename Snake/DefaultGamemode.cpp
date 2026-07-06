@@ -113,19 +113,31 @@ void DefaultGamemode::_check_keydown_events(bool &running)
 			{
 				if (e.key.keysym.sym == SDLK_w || e.key.keysym.sym == SDLK_UP)
 				{
-					mSnakeDirection = SNAKE_UP;
+					if (mSnakeDirection != SNAKE_DOWN)
+					{
+						mSnakeDirectionNext = SNAKE_UP;
+					}
 				}
 				else if (e.key.keysym.sym == SDLK_s || e.key.keysym.sym == SDLK_DOWN)
 				{
-					mSnakeDirection = SNAKE_DOWN;
+					if (mSnakeDirection != SNAKE_UP)
+					{
+						mSnakeDirectionNext = SNAKE_DOWN;
+					}
 				}
 				else if (e.key.keysym.sym == SDLK_a || e.key.keysym.sym == SDLK_LEFT)
 				{
-					mSnakeDirection = SNAKE_LEFT;
+					if (mSnakeDirection != SNAKE_RIGHT)
+					{
+						mSnakeDirectionNext = SNAKE_LEFT;
+					}
 				}
 				else if (e.key.keysym.sym == SDLK_d || e.key.keysym.sym == SDLK_RIGHT)
 				{
-					mSnakeDirection = SNAKE_RIGHT;
+					if (mSnakeDirection != SNAKE_LEFT)
+					{
+						mSnakeDirectionNext = SNAKE_RIGHT;
+					}
 				}
 				else if (e.key.keysym.sym == SDLK_SPACE)
 				{
@@ -179,6 +191,7 @@ void DefaultGamemode::_change_apple_position()
 
 void DefaultGamemode::_update()
 {
+	mSnakeDirection = mSnakeDirectionNext;
 	SDL_Point head = mSnakePositionGrid.front();
 	if (mSnakeDirection == SNAKE_RIGHT)
 	{

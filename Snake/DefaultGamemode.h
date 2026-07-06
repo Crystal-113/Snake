@@ -44,7 +44,7 @@ private:
 	TTF_Font* mFont18;
 	Texture mHead, mBody, mApple;
 	Texture mLengthTextTexture, mWaitingScreenTextTexture, mPausedScreenTextTexture, mLostScreenTextTexture0, mLostScreenTextTexture1;
-	SnakeDirections mSnakeDirection;
+	SnakeDirections mSnakeDirection, mSnakeDirectionNext;
 	std::vector<SDL_Point> mSnakePositionGrid;
 	SDL_Point mApplePositionGrid;
 	GameStatus mGameStatus;
