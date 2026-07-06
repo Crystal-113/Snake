@@ -196,6 +196,7 @@ void DefaultGamemode::_update()
 		else
 		{
 			SDL_Point a = mSnakePositionGrid.back();
+			mSnakePositionGrid.pop_back();
 			a.x = head.x + 1;
 			a.y = head.y;
 			for (int i = 0; i < mLength - 1; i++)
@@ -206,7 +207,6 @@ void DefaultGamemode::_update()
 					return;
 				}
 			}
-			mSnakePositionGrid.pop_back();
 			mSnakePositionGrid.insert(mSnakePositionGrid.begin(), a);
 		}
 	}
@@ -226,6 +226,7 @@ void DefaultGamemode::_update()
 		else
 		{
 			SDL_Point a = mSnakePositionGrid.back();
+			mSnakePositionGrid.pop_back();
 			a.x = head.x - 1;
 			a.y = head.y;
 			for (int i = 0; i < mLength - 1; i++)
@@ -236,7 +237,6 @@ void DefaultGamemode::_update()
 					return;
 				}
 			}
-			mSnakePositionGrid.pop_back();
 			mSnakePositionGrid.insert(mSnakePositionGrid.begin(), a);
 		}
 	}
@@ -256,6 +256,7 @@ void DefaultGamemode::_update()
 		else
 		{
 			SDL_Point a = mSnakePositionGrid.back();
+			mSnakePositionGrid.pop_back();
 			a.x = head.x;
 			a.y = head.y + 1;
 			for (int i = 0; i < mLength - 1; i++)
@@ -266,7 +267,6 @@ void DefaultGamemode::_update()
 					return;
 				}
 			}
-			mSnakePositionGrid.pop_back();
 			mSnakePositionGrid.insert(mSnakePositionGrid.begin(), a);
 		}
 	}
@@ -286,6 +286,7 @@ void DefaultGamemode::_update()
 		else
 		{
 			SDL_Point a = mSnakePositionGrid.back();
+			mSnakePositionGrid.pop_back();
 			a.x = head.x;
 			a.y = head.y - 1;
 			for (int i = 0; i < mLength - 1; i++)
@@ -296,7 +297,6 @@ void DefaultGamemode::_update()
 					return;
 				}
 			}
-			mSnakePositionGrid.pop_back();
 			mSnakePositionGrid.insert(mSnakePositionGrid.begin(), a);
 		}
 	}
