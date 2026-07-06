@@ -57,22 +57,22 @@ bool DefaultGamemode::load_media()
 		return false;
 	}
 
-	if (!mWaitingScreenTextTexture.load_from_text(mRenderer.get_renderer(), mFont36, "按空格键开始", TEXT_COLOR))
+	if (!mWaitingScreenTextTexture.load_from_text(mRenderer.get_renderer(), mFont36, "按空格键开始", TEXT_COLOR_WHITE))
 	{
 		return false;
 	}
 
-	if (!mPausedScreenTextTexture.load_from_text(mRenderer.get_renderer(), mFont36, "暂 停", TEXT_COLOR))
+	if (!mPausedScreenTextTexture.load_from_text(mRenderer.get_renderer(), mFont36, "暂 停", TEXT_COLOR_YELLOW))
 	{
 		return false;
 	}
 
-	if (!mLostScreenTextTexture0.load_from_text(mRenderer.get_renderer(), mFont36, "游戏结束", TEXT_COLOR))
+	if (!mLostScreenTextTexture0.load_from_text(mRenderer.get_renderer(), mFont36, "游戏结束", TEXT_COLOR_YELLOW))
 	{
 		return false;
 	}
 
-	if (!mLostScreenTextTexture1.load_from_text(mRenderer.get_renderer(), mFont36, "按空格键重玩", TEXT_COLOR))
+	if (!mLostScreenTextTexture1.load_from_text(mRenderer.get_renderer(), mFont36, "按空格键重玩", TEXT_COLOR_YELLOW))
 	{
 		return false;
 	}
@@ -317,7 +317,7 @@ void DefaultGamemode::_render_active()
 	{
 		mBody.render(mRenderer.get_renderer(), mSnakePositionGrid[i].x * GRID_SIZE, mSnakePositionGrid[i].y * GRID_SIZE);
 	}
-	mLengthTextTexture.load_from_text(mRenderer.get_renderer(), mFont18, _prep_length_text(), TEXT_COLOR);
+	mLengthTextTexture.load_from_text(mRenderer.get_renderer(), mFont18, _prep_length_text(), TEXT_COLOR_YELLOW);
 	mLengthTextTexture.render(mRenderer.get_renderer(), SCREEN_WIDTH - mLengthTextTexture.get_width(), 0);
 }
 
