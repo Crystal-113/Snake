@@ -357,6 +357,7 @@ void DefaultGamemode::_prep()
 	}
 	mLength = SNAKE_START_LENGTH;
 	mSnakeDirection = SNAKE_RIGHT;
+	mSnakeDirectionNext = SNAKE_RIGHT;
 	_change_apple_position();
 }
 
