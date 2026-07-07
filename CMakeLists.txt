@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(Snake VERSION 1.1.0)
+project(Snake VERSION 1.1.3)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,7 +10,7 @@ find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 
-add_executable(Snake
+add_executable(Snake WIN32
     src/main.cpp
     src/DefaultGamemode.cpp
     src/Renderer.cpp
@@ -23,6 +23,7 @@ target_include_directories(Snake PRIVATE
 
 target_link_libraries(Snake PRIVATE
     SDL2::SDL2
+    SDL2::SDL2main
     SDL2_image::SDL2_image
     SDL2_ttf::SDL2_ttf
 )
