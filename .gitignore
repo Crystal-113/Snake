@@ -1,0 +1,23 @@
+# Build directories
+/build/
+/release/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+Makefile
+
+# IDE
+*.cbp
+*.layout
+*.depend
+
+# Compiled objects
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
