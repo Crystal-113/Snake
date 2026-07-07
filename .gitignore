@@ -1,4 +1,4 @@
-# Build directories
+# CMake build directories
 /build/
 /release/
 
@@ -9,15 +9,22 @@ cmake_install.cmake
 install_manifest.txt
 Makefile
 
-# IDE
+# Code::Blocks
 *.cbp
 *.layout
 *.depend
 
-# Compiled objects
+# Visual Studio
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Compiled files
 *.o
 *.obj
-
-# Executables
 *.exe
-*.out
+
+# OS files
+.DS_Store
+Thumbs.db
