@@ -81,6 +81,10 @@ void cleanup()
 
 	SDL_DestroyWindow(gWindow);
 	gWindow = NULL;
+
+	TTF_Quit();
+	IMG_Quit();
+	SDL_Quit();
 }
 
 int main(int argc, char* args[])
@@ -102,7 +106,6 @@ int main(int argc, char* args[])
 	if (!default_mode.load_media())
 	{
 		printf("[Error] Failed to create game instance!\n");
-		default_mode.cleanup();
 		cleanup();
 		return 1;
 	}
