@@ -74,13 +74,19 @@ void cleanup()
 	gButtonTextTexture.free();
 	gVersionTexture.free();
 
-	TTF_CloseFont(gFont);
-	gFont = NULL;
+	if(gFont != NULL)
+	{
+		TTF_CloseFont(gFont);
+		gFont = NULL;
+	}
 
 	gRenderer.free();
 
-	SDL_DestroyWindow(gWindow);
-	gWindow = NULL;
+	if(gWindow != NULL)
+	{
+		SDL_DestroyWindow(gWindow);
+		gWindow = NULL;
+	}
 
 	TTF_Quit();
 	IMG_Quit();
@@ -106,12 +112,14 @@ int main(int argc, char* args[])
 	if (!default_mode.load_media())
 	{
 		printf("[Error] Failed to create game instance!\n");
+		default_mode.cleanup();
 		cleanup();
 		return 1;
 	}
 
 	if (default_mode.main_loop() == QUIT_STATUS_QUIT_GAME)
 	{
+		default_mode.cleanup();
 		cleanup();
 		return 0;
 	}

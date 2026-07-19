@@ -91,10 +91,16 @@ void DefaultGamemode::cleanup()
 	mLostScreenTextTexture0.free();
 	mLostScreenTextTexture1.free();
 
-	TTF_CloseFont(mFont36);
-	mFont36 = NULL;
-	TTF_CloseFont(mFont18);
-	mFont18 = NULL;
+	if(mFont36 != NULL)
+	{
+		TTF_CloseFont(mFont36);
+		mFont36 = NULL;
+	}
+	if(mFont18 != NULL)
+	{
+		TTF_CloseFont(mFont18);
+		mFont18 = NULL;
+	}
 }
 
 void DefaultGamemode::_check_keydown_events(bool &running)
